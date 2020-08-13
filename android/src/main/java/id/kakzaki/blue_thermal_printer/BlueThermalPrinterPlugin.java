@@ -460,6 +460,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
           break;
       }
       THREAD.write(message.getBytes());
+      THREAD.write(PrinterCommands.CARRIAGE_RETURN);
       THREAD.write(PrinterCommands.FEED_LINE);
       result.success(true);
     } catch (Exception ex) {
@@ -514,6 +515,7 @@ public class BlueThermalPrinterPlugin implements MethodCallHandler, RequestPermi
       return;
     }
     try {
+      THREAD.write(PrinterCommands.CARRIAGE_RETURN);
       THREAD.write(PrinterCommands.FEED_LINE);
       result.success(true);
     } catch (Exception ex) {

@@ -20,6 +20,7 @@ public class PrinterCommands {
 
     public static final byte[] INIT = {27, 64};
     public static byte[] FEED_LINE = {10};
+    public static byte[] CARRIAGE_RETURN = {13};
 
     public static byte[] SELECT_FONT_A = {20, 33, 0};
 
